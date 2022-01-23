@@ -1,7 +1,5 @@
--- configure the speaker
-speaker = peripheral.find("speaker")
-
-running = true
+-- configure the disk drive
+direction = "right"
 
 -- display the menu
 function displayMenu ()
@@ -14,12 +12,12 @@ end
 
 -- play music
 function play ()
-	disk.playAudio("right")
+	disk.playAudio(direction)
 end
 
 -- stop music
 function stop ()
-	-- stop
+	disk.stopAudio(direction)
 end
 
 -- quit program
@@ -27,16 +25,19 @@ function quit()
 	running = false
 end
 
+running = true
 while (running)
 do
+	displayMenu()
 	event, key = os.pullEvent("key")
 	if (key == 2)
 	then
 		play()
 	elseif (key == 3)
 	then
-		pause()
+		stop()
 	elseif (key == 4)
 	then
-		stop()
+		quit()
 	end
+end
