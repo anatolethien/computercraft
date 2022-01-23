@@ -3,6 +3,7 @@ m.setTextScale(2)
 
 function getTemperature()
 	return math.random(-17, 3)
+end
 
 function displayStatus()
 	m.clear()
