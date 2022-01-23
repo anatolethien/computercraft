@@ -2,7 +2,17 @@ m = peripheral.find("monitor")
 m.setTextScale(2)
 
 function getTemperature()
-	return math.random(-17, 3)
+	local t = -10
+	local r = math.random(0, 60)
+	if (r == 0 and t >= -19)
+	then
+		t = t - 1
+	end
+	if (r == 60 and t <= 5)
+	then
+		t = t + 1
+	end
+	return string.format("%.0f°C", t)
 end
 
 function displayStatus()
