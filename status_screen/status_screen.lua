@@ -1,8 +1,9 @@
-function displayTime(m)
+m = peripheral.find("monitor")
+
+function displayTime()
 	m.clear()
-	m.setCursorPos(2, 1)
+	m.setCursorPos(8, 2)
 	m.write(textutils.formatTime(os.time(), true))
 end
 
-m = peripheral.find("monitor")
-displayTime(m)
+displayTime()
