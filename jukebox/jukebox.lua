@@ -28,6 +28,7 @@ end
 running = true
 while (running)
 do
+	term.clear()
 	displayMenu()
 	event, key = os.pullEvent("key")
 	if (key == 2)
