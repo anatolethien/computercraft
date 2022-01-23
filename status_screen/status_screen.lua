@@ -1,9 +1,15 @@
 m = peripheral.find("monitor")
+m.setTextScale(2)
 
-function displayTime()
+function getTemperature()
+	return math.random(-17, 3)
+
+function displayStatus()
 	m.clear()
-	m.setCursorPos(8, 2)
+	m.setCursorPos(3, 2)
 	m.write(textutils.formatTime(os.time(), true))
+	m.setCursorPos(3, 4)
+	m.write(getTemperature())
 end
 
-displayTime()
+displayStatus()
