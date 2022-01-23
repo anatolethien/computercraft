@@ -23,4 +23,8 @@ function displayStatus()
 	m.write(getTemperature())
 end
 
-displayStatus()
+while (true)
+do
+	displayStatus()
+	os.sleep(0.5)
+end
