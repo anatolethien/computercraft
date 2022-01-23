@@ -3,6 +3,8 @@ direction = "right"
 
 -- display the menu
 function displayMenu ()
+	term.clear()
+	term.setCursorPos(1, 1)
 	print("Jukebox")
 	print()
 	print("1 - Play")
@@ -28,7 +30,6 @@ end
 running = true
 while (running)
 do
-	term.clear()
 	displayMenu()
 	event, key = os.pullEvent("key")
 	if (key == 2)
